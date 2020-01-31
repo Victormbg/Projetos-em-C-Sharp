@@ -1,6 +1,6 @@
 FROM gitpod/workspace-full
                     
-USER gitpod
+USER root
 
 RUN wget -q https://packages.microsoft.com/config/ubuntu/19.04/packages-microsoft-prod.deb && \
     dpkg -i packages-microsoft-prod.deb && rm -rf packages-microsoft-prod.deb && \
