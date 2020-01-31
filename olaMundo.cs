@@ -1,6 +1,5 @@
 using System;
-
-public class ClasseExemplo
+class ClasseExemplo
 {
     public static void Main()
     {

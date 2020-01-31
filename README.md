@@ -2,3 +2,7 @@
 
 # Projetos em C#
 Estudos e Projetos em C#
+
+# LINKS
+https://docs.microsoft.com/pt-br/dotnet/core/tutorials/with-visual-studio-code<br>
+https://pt.wikipedia.org/wiki/Lista_de_exemplos_de_c%C3%B3digo_C_Sharp<br>

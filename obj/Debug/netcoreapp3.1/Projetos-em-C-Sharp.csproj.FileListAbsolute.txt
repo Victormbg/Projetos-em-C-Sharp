@@ -1,0 +1,3 @@
+/workspace/Projetos-em-C-Sharp/obj/Debug/netcoreapp3.1/Projetos-em-C-Sharp.csprojAssemblyReference.cache
+/workspace/Projetos-em-C-Sharp/obj/Debug/netcoreapp3.1/Projetos-em-C-Sharp.AssemblyInfoInputs.cache
+/workspace/Projetos-em-C-Sharp/obj/Debug/netcoreapp3.1/Projetos-em-C-Sharp.AssemblyInfo.cs
