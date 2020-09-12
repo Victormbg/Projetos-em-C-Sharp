@@ -1,12 +1,16 @@
 using System;
 class ClasseSoma
 {
-    public static void Main()
+    static void Main(string[] args)
     {
-        soma();
+        Console.WriteLine("Digite um valor:");
+        int a = Convert.ToInt32 = Console.ReadLine();
+        Console.WriteLine("Digite um valor:");
+        int b = Convert.ToInt32 = Console.ReadLine();
+        Console.WriteLine("Soma e" + soma(a, b));
     }
-    void soma()
+    public static int soma(int a, int b)
     {
-        return Console.WriteLine("Não e Victor");;
+        return a + b;
     }
 }
