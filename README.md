@@ -3,13 +3,13 @@
 # Projetos em C#
 Estudos e Projetos em C#
 
-# PASSO A PASSO NO GITPOD:
+# PASSO A PASSO COMANDOS:
 
-# COMPILAR
-mono-csc olaMundo.cs
+# CRIAR PROJETO PELO TERMINAL:
+dotnet new console -o NomeProjeto
 
-# Executar o arquivo.exe
-mono olaMundo.exe
+# RODAR O CODIDO
+dotnet run Arquivo.cs
 
 # LINKS
 https://docs.microsoft.com/pt-br/dotnet/core/tutorials/with-visual-studio-code<br>
