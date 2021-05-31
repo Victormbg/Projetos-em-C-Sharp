@@ -37,23 +37,18 @@ namespace Projeto
             {
                 execute();
             }
+            catch (System.FormatException e)
+            {
+                Console.WriteLine("Codigo de erro: " + e.GetType() + "\nMensagem: Foi inserido um valor com caractere no formato errado.");
+                Thread.Sleep(TimeSpan.FromSeconds(4));
+                Console.Clear();
+                execute();
+            }
             catch (Exception e)
             {
-                var tipo = e.GetType();
-                if (tipo.ToString() == "System.FormatException")
-                {
-                    Console.WriteLine("Foi inserido um valor com caractere no formato errado. Por favor refaço os passos");
-                    Thread.Sleep(TimeSpan.FromSeconds(2));
-                    Console.Clear();
-                    execute();
-                }
-                else
-                {
-                    Console.WriteLine(e.GetType());
-                    Console.WriteLine("Erro ao executar: " + e.Message);
-                }
+                Console.WriteLine(e.GetType());
+                Console.WriteLine("Erro ao executar: " + e.Message);
             }
-
         }
         public static void execute()
         {
