@@ -9,7 +9,6 @@ Estudos e Projetos em C#
 dotnet new console -o NomeProjeto
 dotnet new winforms -o NomeProjeto
 
-
 # RODAR O CODIDO
 dotnet run Arquivo.cs
 
