@@ -1,47 +1,83 @@
 ﻿using System;
+using System.Threading;
+
 
 namespace Projeto
 {
+    class Valores
+    {
+        private string valor1;
+        private string valor2;
+
+        public string Valor1
+        {
+            get { return valor1; }
+            set { valor1 = value; }
+        }
+        public string Valor2
+        {
+            get { return valor2; }
+            set { valor2 = value; }
+        }
+        public int soma(int a, int b)
+        {
+            return a + b;
+        }
+        public int subtracao(int a, int b)
+        {
+            return a - b;
+        }
+    }
     class Program
     {
+
         static void Main(string[] args)
         {
             try
             {
-                Console.WriteLine("Digite o primeiro valor: ");
-                var a = Console.ReadLine();
-                Console.WriteLine("Digite o segundo valor: ");
-                var b = Console.ReadLine();
-                Console.WriteLine("A soma é " + soma(Convert.ToInt32(a), Convert.ToInt32(b)));
-                Console.WriteLine("A subtração  é " + subtracao(int.Parse(a), int.Parse(b)));
-                Func<double, double, double> divisao = (double a, double b) =>
-                 {
-                     return a / b;
-                 };
-                Func<double, double, double> multiplicacao = (a, b) => a * b;
-                Console.WriteLine("A divisão  é  {0} ", divisao(int.Parse(a), int.Parse(b)));
-                Console.WriteLine("A multiplicação  é  {0} ", multiplicacao(int.Parse(a), int.Parse(b)));
-
-                int[] lista = { int.Parse(a), int.Parse(b) };
-                foreach (var i in lista)
-                {
-                    System.Console.Write(i + " ");
-                }
-
+                execute();
             }
             catch (Exception e)
             {
-                Console.WriteLine("Erro ao executar: " + e.Message);
+                var tipo = e.GetType();
+                if (tipo.ToString() == "System.FormatException")
+                {
+                    Console.WriteLine("Foi inserido um valor com caractere no formato errado. Por favor refaço os passos");
+                    Thread.Sleep(TimeSpan.FromSeconds(2));
+                    Console.Clear();
+                    execute();
+                }
+                else
+                {
+                    Console.WriteLine(e.GetType());
+                    Console.WriteLine("Erro ao executar: " + e.Message);
+                }
             }
 
         }
-        public static int soma(int a, int b)
+        public static void execute()
         {
-            return a + b;
-        }
-        public static int subtracao(int a, int b)
-        {
-            return a - b;
+            var valor = new Valores();
+            Console.WriteLine("Digite o primeiro valor: ");
+            valor.Valor1 = Console.ReadLine();
+            Console.WriteLine("Digite o segundo valor: ");
+            valor.Valor2 = Console.ReadLine();
+
+            Console.WriteLine("A soma é " + valor.soma(Convert.ToInt32(valor.Valor1), Convert.ToInt32(valor.Valor2)));
+            Console.WriteLine("A subtração  é " + valor.subtracao(int.Parse(valor.Valor1), int.Parse(valor.Valor2)));
+            Func<double, double, double> divisao = (double a, double b) =>
+             {
+                 return a / b;
+             };
+            Func<double, double, double> multiplicacao = (a, b) => a * b;
+            Console.WriteLine("A divisão  é  {0} ", divisao(int.Parse(valor.Valor1), int.Parse(valor.Valor2)));
+            Console.WriteLine("A multiplicação  é  {0} ", multiplicacao(int.Parse(valor.Valor1), int.Parse(valor.Valor2)));
+
+            int[] lista = { int.Parse(valor.Valor1), int.Parse(valor.Valor2) };
+            foreach (var i in lista)
+            {
+                System.Console.Write("LISTA: " + i + " ");
+            }
         }
     }
 }

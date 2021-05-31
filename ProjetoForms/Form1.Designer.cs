@@ -31,17 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Programa";
-            /*
-            // Create an instance of a Label.
-            Label lblTeste = new Label();
-            // Set the border to a three-dimensional border.
-            lblTeste.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            // Set the text of the control and specify a mnemonic character.
-            lblTeste.Text = "Teste";
-            /* Set the size of the control based on the PreferredHeight and PreferredWidth values. */
-            //lblTeste.Size = new Size(lblTeste.PreferredWidth, lblTeste.PreferredHeight);
-
+            this.Text = "Programa de Elementos";
         }
 
         #endregion
