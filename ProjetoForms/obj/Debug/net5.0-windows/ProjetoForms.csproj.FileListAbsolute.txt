@@ -1,0 +1,16 @@
+C:\Users\vgarcia\Desktop\Projetos-em-C-Sharp\ProjetoForms\bin\Debug\net5.0-windows\ProjetoForms.exe
+C:\Users\vgarcia\Desktop\Projetos-em-C-Sharp\ProjetoForms\bin\Debug\net5.0-windows\ProjetoForms.deps.json
+C:\Users\vgarcia\Desktop\Projetos-em-C-Sharp\ProjetoForms\bin\Debug\net5.0-windows\ProjetoForms.runtimeconfig.json
+C:\Users\vgarcia\Desktop\Projetos-em-C-Sharp\ProjetoForms\bin\Debug\net5.0-windows\ProjetoForms.runtimeconfig.dev.json
+C:\Users\vgarcia\Desktop\Projetos-em-C-Sharp\ProjetoForms\bin\Debug\net5.0-windows\ProjetoForms.dll
+C:\Users\vgarcia\Desktop\Projetos-em-C-Sharp\ProjetoForms\bin\Debug\net5.0-windows\ref\ProjetoForms.dll
+C:\Users\vgarcia\Desktop\Projetos-em-C-Sharp\ProjetoForms\bin\Debug\net5.0-windows\ProjetoForms.pdb
+C:\Users\vgarcia\Desktop\Projetos-em-C-Sharp\ProjetoForms\obj\Debug\net5.0-windows\ProjetoForms.csproj.AssemblyReference.cache
+C:\Users\vgarcia\Desktop\Projetos-em-C-Sharp\ProjetoForms\obj\Debug\net5.0-windows\ProjetoForms.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vgarcia\Desktop\Projetos-em-C-Sharp\ProjetoForms\obj\Debug\net5.0-windows\ProjetoForms.AssemblyInfoInputs.cache
+C:\Users\vgarcia\Desktop\Projetos-em-C-Sharp\ProjetoForms\obj\Debug\net5.0-windows\ProjetoForms.AssemblyInfo.cs
+C:\Users\vgarcia\Desktop\Projetos-em-C-Sharp\ProjetoForms\obj\Debug\net5.0-windows\ProjetoForms.csproj.CoreCompileInputs.cache
+C:\Users\vgarcia\Desktop\Projetos-em-C-Sharp\ProjetoForms\obj\Debug\net5.0-windows\ProjetoForms.dll
+C:\Users\vgarcia\Desktop\Projetos-em-C-Sharp\ProjetoForms\obj\Debug\net5.0-windows\ref\ProjetoForms.dll
+C:\Users\vgarcia\Desktop\Projetos-em-C-Sharp\ProjetoForms\obj\Debug\net5.0-windows\ProjetoForms.pdb
+C:\Users\vgarcia\Desktop\Projetos-em-C-Sharp\ProjetoForms\obj\Debug\net5.0-windows\ProjetoForms.genruntimeconfig.cache

@@ -7,6 +7,8 @@ Estudos e Projetos em C#
 
 # CRIAR PROJETO PELO TERMINAL:
 dotnet new console -o NomeProjeto
+dotnet new winforms -o NomeProjeto
+
 
 # RODAR O CODIDO
 dotnet run Arquivo.cs
