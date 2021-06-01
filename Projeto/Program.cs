@@ -1,78 +1,76 @@
 ﻿using System;
 using System.Threading;
-
+using System.Threading.Tasks;
 
 namespace Projeto
 {
-    class Valores
-    {
-        private string valor1;
-        private string valor2;
-
-        public string Valor1
-        {
-            get { return valor1; }
-            set { valor1 = value; }
-        }
-        public string Valor2
-        {
-            get { return valor2; }
-            set { valor2 = value; }
-        }
-        public int soma(int a, int b)
-        {
-            return a + b;
-        }
-        public int subtracao(int a, int b)
-        {
-            return a - b;
-        }
-    }
     class Program
     {
-
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
-            try
+            do
             {
-                execute();
+                try
+                {
+                    await execute();
+                }
+                catch (System.FormatException e)
+                {
+                    Console.WriteLine("Código de erro: " + e.GetType() + "\nMensagem: Foi inserido um valor com caractere no formato errado.");
+                    Thread.Sleep(TimeSpan.FromSeconds(4));
+                    Console.Clear();
+                    await execute();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Código de erro: " + e.GetType() + "\nMensagem: " + e.Message);
+                    Thread.Sleep(TimeSpan.FromSeconds(4));
+                    Console.Clear();
+                    await execute();
+                }
+                finally
+                {
+                    Console.WriteLine("\n\nDeseja sair do programa?\nSe sim, digite: S\nSe não, digite: N");
+                    ConsoleKey tecla;
+                    tecla = Console.ReadKey().Key;
+                    if (tecla == ConsoleKey.S)
+                    {
+                        Environment.Exit(1);
+                    }
+                    else if (tecla == ConsoleKey.N)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Retornando...");
+                        Thread.Sleep(TimeSpan.FromSeconds(2));
+                    }
+                    else
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Opção invalida");
+                        Environment.Exit(1);
+                    }
+                }
             }
-            catch (System.FormatException e)
-            {
-                Console.WriteLine("Codigo de erro: " + e.GetType() + "\nMensagem: Foi inserido um valor com caractere no formato errado.");
-                Thread.Sleep(TimeSpan.FromSeconds(4));
-                Console.Clear();
-                execute();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.GetType());
-                Console.WriteLine("Erro ao executar: " + e.Message);
-            }
+            while (true);
         }
-        public static void execute()
+        static async Task execute()
         {
+            Console.Clear();
             var valor = new Valores();
-            Console.WriteLine("Digite o primeiro valor: ");
+            Console.Write("Digite o primeiro valor: ");
             valor.Valor1 = Console.ReadLine();
-            Console.WriteLine("Digite o segundo valor: ");
+            Console.Write("Digite o segundo valor: ");
             valor.Valor2 = Console.ReadLine();
 
-            Console.WriteLine("A soma é " + valor.soma(Convert.ToInt32(valor.Valor1), Convert.ToInt32(valor.Valor2)));
-            Console.WriteLine("A subtração  é " + valor.subtracao(int.Parse(valor.Valor1), int.Parse(valor.Valor2)));
-            Func<double, double, double> divisao = (double a, double b) =>
-             {
-                 return a / b;
-             };
-            Func<double, double, double> multiplicacao = (a, b) => a * b;
-            Console.WriteLine("A divisão  é  {0} ", divisao(int.Parse(valor.Valor1), int.Parse(valor.Valor2)));
-            Console.WriteLine("A multiplicação  é  {0} ", multiplicacao(int.Parse(valor.Valor1), int.Parse(valor.Valor2)));
+            Console.Clear();
+            Console.Write("Aguardando...");
+            await Task.Delay(TimeSpan.FromSeconds(2));
+            Console.Clear();
 
-            int[] lista = { int.Parse(valor.Valor1), int.Parse(valor.Valor2) };
-            foreach (var i in lista)
-            {
-                System.Console.Write("LISTA: " + i + " ");
-            }
+            Console.WriteLine("A soma é " + valor.soma(int.Parse(valor.Valor1), int.Parse(valor.Valor2)));
+            Console.WriteLine("A subtração  é " + valor.subtracao(int.Parse(valor.Valor1), int.Parse(valor.Valor2)));
+            Console.WriteLine("A multiplicação é " + valor.multiplicacao(Convert.ToInt32(valor.Valor1), Convert.ToInt32(valor.Valor2)));
+            Console.WriteLine("A divisão  é " + valor.divisao(int.Parse(valor.Valor1), int.Parse(valor.Valor2)));
         }
     }
 }
