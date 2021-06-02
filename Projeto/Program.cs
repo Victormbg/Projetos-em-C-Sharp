@@ -8,11 +8,13 @@ namespace Projeto
     {
         static async Task Main(string[] args)
         {
+
             do
             {
                 try
                 {
                     await execute();
+
                 }
                 catch (System.FormatException e)
                 {
@@ -30,25 +32,7 @@ namespace Projeto
                 }
                 finally
                 {
-                    Console.WriteLine("\n\nDeseja sair do programa?\nSe sim, digite: S\nSe não, digite: N");
-                    ConsoleKey tecla;
-                    tecla = Console.ReadKey().Key;
-                    if (tecla == ConsoleKey.S)
-                    {
-                        Environment.Exit(1);
-                    }
-                    else if (tecla == ConsoleKey.N)
-                    {
-                        Console.Clear();
-                        Console.WriteLine("Retornando...");
-                        Thread.Sleep(TimeSpan.FromSeconds(2));
-                    }
-                    else
-                    {
-                        Console.Clear();
-                        Console.WriteLine("Opção invalida");
-                        Environment.Exit(1);
-                    }
+                    await sair();
                 }
             }
             while (true);
@@ -71,6 +55,33 @@ namespace Projeto
             Console.WriteLine("A subtração  é " + valor.subtracao(int.Parse(valor.Valor1), int.Parse(valor.Valor2)));
             Console.WriteLine("A multiplicação é " + valor.multiplicacao(Convert.ToInt32(valor.Valor1), Convert.ToInt32(valor.Valor2)));
             Console.WriteLine("A divisão  é " + valor.divisao(int.Parse(valor.Valor1), int.Parse(valor.Valor2)));
+        }
+
+
+        static async Task sair()
+        {
+            Console.WriteLine("\n\nDeseja sair do programa?\nSe sim, digite: S\nSe não, digite: N");
+            ConsoleKey tecla;
+            tecla = Console.ReadKey().Key;
+            if (tecla == ConsoleKey.S)
+            {
+                Environment.Exit(1);
+            }
+            else if (tecla == ConsoleKey.N)
+            {
+                Console.Clear();
+                Console.WriteLine("Retornando...");
+                Thread.Sleep(TimeSpan.FromSeconds(2));
+                //Console.Write("Thread ID: {0}\n", Thread.CurrentThread.ManagedThreadId);
+            }
+            else
+            {
+                Console.Clear();
+                Console.WriteLine("Opção invalida");
+                await Task.Delay(TimeSpan.FromSeconds(2));
+                Console.Clear();
+                await sair();
+            }
         }
     }
 }

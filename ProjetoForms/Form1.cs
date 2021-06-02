@@ -18,7 +18,29 @@ namespace ProjetoForms
         {
             InitializeComponent();
         }
-        private void btnSair(object sender, EventArgs e)
+        private void Limpar(object sender, EventArgs e)
+        {
+            const string message = "Você deseja limpar a lista?";
+            const string caption = "Limpando...";
+            var result = MessageBox.Show(message, caption,
+                                         MessageBoxButtons.YesNo,
+                                         MessageBoxIcon.Exclamation);
+
+            if (result == DialogResult.Yes)
+            {
+                // NAO FUNCIONA REVER ESSA PARTE
+                for (int i = listBox1.Items.Count - 1; i > -1; i--)
+                {
+                    {
+                        if (listBox1.Items[i].ToString().Contains("OBJECT"))
+                        {
+                            listBox1.Items.RemoveAt(i);
+                        }
+                    }
+                }
+            }
+        }
+        private void Sair(object sender, EventArgs e)
         {
             const string message = "Você deseja sair do Programa?";
             const string caption = "Fechando...";
@@ -32,7 +54,7 @@ namespace ProjetoForms
             }
         }
 
-        private void btnCalcular(object sender, EventArgs e)
+        private void Calcular(object sender, EventArgs e)
         {
             try
             {

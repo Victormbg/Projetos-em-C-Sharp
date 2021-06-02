@@ -33,7 +33,7 @@ namespace ProjetoForms
 
         #region Windows Form Designer generated code
 
-        private Button button1, button2;
+        private Button btnLimpar, btnSair, btnCalcular;
         private ListBox listBox1;
         private TextBox textBox1, textBox2;
 
@@ -41,16 +41,22 @@ namespace ProjetoForms
         {
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            // Tamanho da Janela
             this.ClientSize = new System.Drawing.Size(300, 500);
+            // Titulo da Janela
             this.Text = "Calculadora";
             // Bloquear de arrasta a janela e aumentar seu tamanho
-            //this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             // Remover o botão Maximizar
             this.MaximizeBox = false;
             // Remover o botão Minimizar
-            this.MinimizeBox = false;
-            // Definir icone
+            //this.MinimizeBox = false;
+            // Definir icone da Janela
             this.Icon = new Icon("icon.ico");
+            // Cor de Fundo da Janela
+            this.BackColor = Color.LightBlue;
+            // auto redimensionar a janela
+            this.AutoSize = true;
 
             // Criando a Label
             Label label1 = new Label();
@@ -75,42 +81,49 @@ namespace ProjetoForms
             textBox2.Size = new Size(200, 20);
             textBox2.TabIndex = 0;
 
-            // Botao Adicionar Elementos
-            button1 = new Button();
-            button1.Left = (this.ClientSize.Width - button1.Width) / 2;
-            button1.Top = 200;
-            button1.Location = new Point(50, 200);
-            button1.Text = "Calcular";
-            button1.Font = new Font("Arial", 8, FontStyle.Bold);
-            button1.Size = new Size(200, 30);
-            button1.Click += new EventHandler(btnCalcular);
+            // Botao Calcular
+            btnCalcular = new Button();
+            btnCalcular.Left = (this.ClientSize.Width - btnCalcular.Width) / 2;
+            btnCalcular.Top = 200;
+            btnCalcular.Location = new Point(50, 200);
+            btnCalcular.Text = "Calcular";
+            btnCalcular.Font = new Font("Arial", 8, FontStyle.Bold);
+            btnCalcular.Size = new Size(200, 30);
+            btnCalcular.Click += new EventHandler(Calcular);
+
+            // Botao Limpar
+            btnLimpar = new Button();
+            btnLimpar.Left = (this.ClientSize.Width - btnLimpar.Width) / 2;
+            btnLimpar.Top = 200;
+            btnLimpar.Location = new Point(50, 250);
+            btnLimpar.Text = "Limpar";
+            btnLimpar.Font = new Font("Arial", 8, FontStyle.Bold);
+            btnLimpar.Size = new Size(200, 30);
+            btnLimpar.Click += new EventHandler(Limpar);
 
             // Criando a Lista  
             listBox1 = new ListBox();
-            listBox1.Location = new Point(50, 250);
+            listBox1.Location = new Point(50, 300);
             listBox1.Size = new Size(200, 200);
 
             // Botao Sair Programa
-            button2 = new Button();
-            //button2.Left = (this.ClientSize.Width - button2.Width) / 2;
-            button2.Top = 450;
-            button2.Left = 50;
-            //button2.Location = new Point(400, 300);
-            button2.Size = new Size(200, 30);
-            //button2.BackColor = Color.MediumVioletRed;
-            button2.Text = "Sair";
-            button2.Font = new Font("Arial", 8, FontStyle.Bold);
-            button2.Click += new EventHandler(btnSair);
+            btnSair = new Button();
+            btnSair.Top = 500;
+            btnSair.Left = 50;
+            btnSair.Size = new Size(200, 30);
+            //btnSair.BackColor = Color.MediumVioletRed;
+            btnSair.Text = "Sair";
+            btnSair.Font = new Font("Arial", 8, FontStyle.Bold);
+            btnSair.Click += new EventHandler(Sair);
 
             // Adicionando os Controls
             this.Controls.Add(label1);
-            this.Controls.Add(button1);
-            this.Controls.Add(button2);
+            this.Controls.Add(btnCalcular);
+            this.Controls.Add(btnLimpar);
+            this.Controls.Add(btnSair);
             this.Controls.Add(listBox1);
             this.Controls.Add(textBox1);
             this.Controls.Add(textBox2);
-            this.BackColor = Color.LightBlue;
-            this.AutoSize = true;
         }
         #endregion
     }
