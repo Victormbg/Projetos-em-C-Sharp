@@ -15,13 +15,18 @@ dotnet new xunit -o NomeProjeto
 # Criar projeto ASP.NET Core Web App:
 dotnet new webapp -o NomeProjeto
 
-# Rodar o codigo:
+# Run your console app:
 dotnet run Arquivo.cs
-# Rodar os testes:
+# Run your windows forms app:
+dotnet run Arquivo.cs
+# Run your tests:
 dotnet test
+# Run your Asp.net webApp app:
+dotnet watch run
 
 # LINKS
 https://docs.microsoft.com/pt-br/dotnet/core/tutorials/with-visual-studio-code<br>
 https://pt.wikipedia.org/wiki/Lista_de_exemplos_de_c%C3%B3digo_C_Sharp<br>
 https://www.gitpod.io/docs/languages/dotnet/<br>
-https://xunit.net/docs/getting-started/netcore/cmdline
+https://xunit.net/docs/getting-started/netcore/cmdline<br>
+https://dotnet.microsoft.com/learn/aspnet/hello-world-tutorial/intro
